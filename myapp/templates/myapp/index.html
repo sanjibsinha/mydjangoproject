@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Django App</title>
+</head>
+<body>
+    <h1>{{ message }}</h1>
+
+    <h2>Items:</h2>
+    <ul>
+        {% for item in items %}  <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Author Information:</h2>
+    <p>Name: {{ author.name }}</p>    <p>Age: {{ author.age }}</p>
+    <p>City: {{ author.city }}</p>
+
+    <h2>Books</h2>
+    <ul>
+        {% for book in books %}  <li>{{ book }}</li>
+        {% endfor %}
+    </ul>
+    <p>Company: {{ company.name }}, Address: {{ company.address.street }}, {{ company.address.city }}</p>
+
+    <a href="{% url 'about' %}">Go to About Page</a>
+    <p></p>
+    <a href="{% url 'contact' %}">Go to Contact Page</a>
+</body>
+</html>
