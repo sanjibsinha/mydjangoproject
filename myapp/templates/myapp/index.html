@@ -6,6 +6,13 @@
 <body>
     <h1>{{ message }}</h1>
 
+    <h1>Product List</h1>
+    <ul>
+        {% for product in products %} 
+            <li>{{ product.name }} - ${{ product.price }}</li> 
+        {% endfor %}
+    </ul>
+
     <h2>Items:</h2>
     <ul>
         {% for item in items %}  <li>{{ item }}</li>

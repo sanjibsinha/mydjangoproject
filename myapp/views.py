@@ -1,11 +1,14 @@
 from django.shortcuts import render
+from .models import Product  # Import your Product model
 
 # Create your views here.
 
 
 def index(request):
+    products = Product.objects.all()  # Get all products from the database
     context = {
         'message': 'Hello from Django World!',
+        'products': products,
         'items': ['Apple', 'Banana', 'Orange', 'Grapes'],
         'author': {
             'name': 'John Doe',
